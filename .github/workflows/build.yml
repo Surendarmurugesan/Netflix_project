@@ -49,8 +49,8 @@ jobs:
       runs-on: self-hosted
       steps:
         - name: Pull the docker image
-          run: docker pull <DOCKERHUB_USERNAME>/netflix:latest
+          run: docker pull surendar96/netflix:latest
         - name: Trivy image scan
-          run: trivy image <DOCKERHUB_USERNAME>/netflix:latest
+          run: trivy image surendar96/netflix:latest
         - name: Run the container netflix
-          run: docker run -d --name netflix -p 8081:80 <DOCKERHUB_USERNAME>/netflix:latest
+          run: docker run -d --name netflix -p 8081:80 surendar96/netflix:latest
